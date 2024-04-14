@@ -129,7 +129,6 @@ function ThreeContainer({ videoHeight, videoWidth, detectorRef }) {
           eyeR = mesh.getObjectByName('eyeRight');
 
           // GUI
-
           const gui = new GUI();
           gui.close();
 
