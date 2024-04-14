@@ -1,0 +1,8 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY ./release/app/dist/renderer/ ./renderer/
+RUN npm install -g serve --registry https://registry.npmmirror.com
+
+CMD [ "serve", "-s", "renderer" ]
