@@ -1,5 +1,5 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import ExamplePage from './pages/ExamplePage';
+import HomePage from './pages/HomePage';
 import './App.css';
 // internationalization
 import { IntlProvider } from 'react-intl';
@@ -16,12 +16,11 @@ const messages = {
 };
 
 export default function App() {
-
-  const userInfo = Requester.postUserInfo("");
+  const userInfo = Requester.postUserInfo('');
   const pageProps = {
-    user: userInfo
-  }
-  const selectedLanguage = getUserLanguage()
+    user: userInfo,
+  };
+  const selectedLanguage = getUserLanguage();
 
   return (
     <IntlProvider
@@ -30,7 +29,7 @@ export default function App() {
     >
       <Router>
         <Routes>
-          <Route path="/" element={<ExamplePage props={pageProps} />} />
+          <Route path="/" element={<HomePage props={pageProps} />} />
         </Routes>
       </Router>
     </IntlProvider>

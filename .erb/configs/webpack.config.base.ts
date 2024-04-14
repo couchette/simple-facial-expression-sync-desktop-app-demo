@@ -2,8 +2,10 @@
  * Base webpack config used across other specific configs
  */
 
+import path from 'path';
 import webpack from 'webpack';
 import TsconfigPathsPlugins from 'tsconfig-paths-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import webpackPaths from './webpack.paths';
 import { dependencies as externals } from '../../release/app/package.json';
 
@@ -50,6 +52,26 @@ const configuration: webpack.Configuration = {
   },
 
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(webpackPaths.rootPath, 'assets', 'models'),
+          to: path.join(webpackPaths.distRendererPath, 'models'),
+        },
+        {
+          from: path.join(webpackPaths.rootPath, 'assets', 'ai_models'),
+          to: path.join(webpackPaths.distRendererPath, 'ai_models'),
+        },
+        {
+          from: path.join(webpackPaths.rootPath, 'assets', 'basis'),
+          to: path.join(webpackPaths.distRendererPath, 'basis'),
+        },
+        {
+          from: path.join(webpackPaths.rootPath, 'assets', 'fileset_resolver'),
+          to: path.join(webpackPaths.distRendererPath, 'fileset_resolver'),
+        },
+      ],
+    }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
     }),

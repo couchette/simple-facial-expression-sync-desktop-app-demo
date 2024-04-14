@@ -96,14 +96,17 @@
     }
   },
   "dependencies": {
-    "antd": "^5.13.1",
+    "@mediapipe/tasks-vision": "^0.10.12",
+    "antd": "^5.16.1",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.8",
     "electron-updater": "^6.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.1",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.16.0",
+    "react-webcam": "^7.2.0",
+    "three": "^0.163.0"
   },
   "devDependencies": {
     "@electron/notarize": "^2.1.0",
@@ -125,6 +128,7 @@
     "browserslist-config-erb": "^0.0.3",
     "chalk": "^4.1.2",
     "concurrently": "^8.2.1",
+    "copy-webpack-plugin": "^12.0.2",
     "core-js": "^3.32.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
